@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang=lang>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>tscanlon</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;favicon&#x2F;apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;favicon&#x2F;favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;favicon&#x2F;favicon-16x16.png">
+        <link rel="manifest" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;site.webmanifest?h=d3283d8cdd099d8504a177b9dd71519055d52b6500e66b0f630e5e81e9b2ebb5">
+
+        <link media="all" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;site.css?h=f47fc6063f209549c7da904140acef8c5d13352832f441d0344c68f7e8f7fd1c" rel="stylesheet">
+        
+        <script src="https:&#x2F;&#x2F;tscanlon.dev&#x2F;elasticlunr.min.js?h=4f648b9e42abdef9c436e68776eca79c23596c798a9ef1400cf538d8a218b8cd"></script>
+        <script src="https:&#x2F;&#x2F;tscanlon.dev&#x2F;search_index.en.js?h=2dd3e8b3eae88f1654d7636c2ddc909dc8710ea84a4bd39e7632188f03cf57c5"></script>
+        <script async src="https:&#x2F;&#x2F;tscanlon.dev&#x2F;scripts&#x2F;search.js?h=35ee7b2cb99cc8a0f91eb93fefa4d1f8765b68f5c38147e923410a6c3ace1786"></script>
+    </head>
+
+    <body>
+        
+        <header id="header">
+          <span class="header-item">
+
+<div class="search-container">
+  <input id="search" type="search" placeholder="Search">
+
+  <div class="search-results" style="display: none;">
+      <div class="search-results__items"></div>
+  </div>
+</div></span>
+          <span class="header-item"><a class="unstyle" href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;">tscanlon</a></span>
+          <span class="header-item"><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;sitemap&#x2F;">Sitemap</a></span>
+        </header>
+        
+
+        <main id="main" class="markdown-body">
+          
+    <div class="page-header sidebar-left">
+        <div class="header-item">
+            <header id="summary">
+    <h2 class="title">
+     
+        <a href="https:&#x2F;&#x2F;stedolan.github.io&#x2F;jq&#x2F;">jq</a>
+        
+     
+        <sub class="version">1.6</sub>
+    
+    </h2> 
+    
+    <dl>
+        
+
+        
+
+        
+
+         
+        <dt>Last Updated</dt>
+        <dd>2021-03-07</dd>
+        
+        
+        <dt>Reading Time</dt>
+        <dd>1 minute(s)</dd>
+    </dl>
+</header>
+        </div>
+        <div class="header-item">
+            
+
+<nav>
+    <h3>Table of Contents</h3>
+    <ul>
+        
+        <li>
+            <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#jq">jq</a>
+            
+            <ul>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#piping">Piping</a>
+                </li>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#interact-with-the-clipboard">Interact with the Clipboard</a>
+                </li>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#array-manipulation">Array Manipulation</a>
+                </li>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#flags">Flags</a>
+                </li>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#show-the-keys">Show the keys</a>
+                </li>
+                
+                <li>
+                    <a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;#sorting">Sorting</a>
+                </li>
+                
+            </ul>
+            
+        </li>
+        
+    </ul>
+</nav>
+
+        </div>
+    </div>
+
+    <article id="content">
+        <h1 id="jq">jq</h1>
+<p>A command line json processor</p>
+<h2 id="piping">Piping</h2>
+<p>The |= instead of the | passes the values along instead of stripping them.</p>
+<h2 id="interact-with-the-clipboard">Interact with the Clipboard</h2>
+<h3 id="pretty-print-the-clipboard-contents">Pretty print the clipboard contents</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">Get-ClipBoard </span><span style="color:#569cd6;">|</span><span style="color:#dcdcdc;"> jq </span><span style="color:#d69d85;">&#39;.&#39;
+</span></code></pre><h6 id=""></h6>
+<h3 id="set-the-results-to-the-clipboard">Set the results to the clipboard</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">Get-ClipBoard </span><span style="color:#569cd6;">|</span><span style="color:#dcdcdc;"> jq </span><span style="color:#d69d85;">&#39;.&#39; </span><span style="color:#569cd6;">| </span><span style="color:#dcdcdc;">Set-ClipBoard
+</span></code></pre><h2 id="array-manipulation">Array Manipulation</h2>
+<h3 id="map-a-property-to-an-array">Map a property to an array</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">Get-ClipBoard </span><span style="color:#569cd6;">|</span><span style="color:#dcdcdc;"> jq </span><span style="color:#d69d85;">&#39;[.someprop]&#39;
+</span></code></pre><h2 id="flags">Flags</h2>
+<h3 id="compress-minify-json">Compress/Minify JSON</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">jq -c </span><span style="color:#d69d85;">&#39;.&#39;
+</span></code></pre><h2 id="show-the-keys">Show the keys</h2>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">jq </span><span style="color:#d69d85;">&#39;. |= keys&#39;
+</span></code></pre><h6 id="-1"></h6>
+<h3 id="two-levels-deep">Two levels deep</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;">jq </span><span style="color:#d69d85;">&#39;.| map_values(keys)&#39;
+</span></code></pre><h2 id="sorting">Sorting</h2>
+<h3 id="sort-by-keys-then-nested-property">Sort by keys then nested property</h3>
+<pre style="background-color:#1e1e1e;">
+<code class="language-powershell" data-lang="powershell"><span style="color:#dcdcdc;"> q </span><span style="color:#d69d85;">&#39;.[] |= sort | .[] |= sort_by(.uid) | .&#39;
+</span></code></pre>
+    </article>
+
+    <nav class="sitemap sidebar-right screen-large">
+        <h3>Sitemap</h3>
+        
+
+
+    
+
+
+    <details open>
+        <summary><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;">tscanlon</a></summary>
+        <ul class="sitemap-list">
+            
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;about&#x2F;">About</a></li>
+    
+
+    
+    
+
+    
+    
+
+
+
+            
+        </ul>
+    </details>
+
+
+    
+    
+    
+
+
+    <details open>
+        <summary><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;projects&#x2F;">Projects</a></summary>
+        <ul class="sitemap-list">
+            
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;projects&#x2F;reverse-dictionary&#x2F;">Reverse Dictionary</a></li>
+    
+
+
+
+            
+            
+            
+        </ul>
+    </details>
+
+
+    
+    
+
+
+    <details open>
+        <summary><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;">Notes</a></summary>
+        <ul class="sitemap-list">
+            
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;t-sql&#x2F;">T-SQL</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;conventional-commits&#x2F;">Conventional Commits</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;git&#x2F;">Git</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;redis&#x2F;">Redis</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;jq&#x2F;">jq</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;iisexpress&#x2F;">IIS Express</a></li>
+    
+
+    
+    
+        <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;curl&#x2F;">Curl</a></li>
+    
+
+
+
+            
+            
+                
+
+
+    <li><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;notes&#x2F;dotnet&#x2F;">DotNet</a></li>
+    <ul>
+        
+
+
+
+        
+    </ul>
+
+
+            
+            
+        </ul>
+    </details>
+
+
+    
+
+
+    </nav>
+  
+        </main>
+
+        
+          <footer id="footer">
+    <span class="footer-item"><a href="https:&#x2F;&#x2F;tscanlon.dev&#x2F;about&#x2F;">About</a></span>
+    <span class="footer-item"><a class="unstyle" href="#">Back to Top</a></span>
+    <span class="footer-item"><a href="https://github.com/gscanlon21">Github</a></span>
+</footer>
+           
+        
+        
+        
+    </body>
+</html>
